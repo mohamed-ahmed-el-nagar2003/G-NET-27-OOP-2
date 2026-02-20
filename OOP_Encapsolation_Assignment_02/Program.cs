@@ -21,7 +21,30 @@ namespace OOP_Encapsolation_Assignment_02
              */
 
             //c) Explain why exposing fields directly(as public) is considered a bad practice in OOP.
-             // becouse don't control access and not validate data 
+            // becouse don't control access and not validate data 
+
+            #endregion
+
+            #region Q2
+            //Q02 :
+            //What is the difference between a field and a property in C#?
+            /*
+             field : 1-direct data storege  2- no validation  3- break encapsolation
+             property : 1- control access 2- can validate 3- enforces encapsolation
+             */
+            //Can a property contain logic?
+            /*
+             Yes in computed property 
+            */
+            //Give an example of a read-only property that returns a calculated value.
+            /*
+            Student st01 = new Student();
+            st01.Age = 22;
+            Console.WriteLine(st01.AgeAfter_10_years);
+            */
+
+
+
 
             #endregion
             #endregion
