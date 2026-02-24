@@ -48,28 +48,32 @@ namespace OOP_Encapsolation_Assignment_02
 
             #endregion
 
-            #region Q3
+            #region Q_3
 
-           // a) What is `this[int index]` called? Explain its purpose.
-           /*
-            Is called indexer
-           help us to trate with object as collection to access any item 
-            */
+            // a) What is `this[int index]` called? Explain its purpose.
+            /*
+             Is called indexer
+            help us to trate with object as collection to access any item 
+             */
 
-           // b) What happens if someone writes `register[10] = "Ali";` ? How would you make the indexer safer?
+            // b) What happens if someone writes `register[10] = "Ali";` ? How would you make the indexer safer?
 
             /*
              Throw exseption 
             validate index if bigger than lengh Return "no size"
              */
-          //  c) Can a class have more than one indexer? If yes, give an example of when that would be useful.
-          /*
-           yes
-          when want to access item from more than way such as ID or Name 
-           */
+            //  c) Can a class have more than one indexer? If yes, give an example of when that would be useful.
+            /*
+             yes
+            when want to access item from more than way such as ID or Name 
+             */
 
             #endregion
-        #endregion
+
+
+
+
+            #endregion
         }
-}
+    }
 }
