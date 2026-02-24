@@ -70,7 +70,19 @@ namespace OOP_Encapsolation_Assignment_02
 
             #endregion
 
+            #region Q_04
+            //a) What does the `static` keyword mean on `TotalOrders`? How is it different from the `Item` field?
+            /*
+             it is shared to all objects belong to class 
+            but `Item` field belong to object
+             */
 
+            // b) Can a static method inside `Order` access the `Item` field directly? Why or why not?
+            /*
+             No becouse only belong to class don't trate with any object 
+             */
+
+            #endregion
 
 
             #endregion
