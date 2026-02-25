@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Security.Principal;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OOP_Encapsolation_Assignment_02
 {
@@ -84,8 +86,81 @@ namespace OOP_Encapsolation_Assignment_02
 
             #endregion
 
+            #endregion
+
+            #region Cinema_System
+            // A
+            Cinema cinema01 = new Cinema();
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Enter data for Ticket {i + 1} :");
+
+                Console.Write("Movie Name : ");
+                string movieName = Console.ReadLine();
+
+                Console.Write("Ticket Type (0=Standard,1=VIP,2=IMAX): ");
+                int typeNumber;
+                while (!int.TryParse(Console.ReadLine(), out typeNumber) ||
+                       !Enum.IsDefined(typeof(TicketType), typeNumber))
+                {
+                    Console.WriteLine("Invalid choice, enter 0, 1 or 2:");
+                }
+
+                TicketType type = (TicketType)typeNumber;
+
+                Console.Write("Seat Row(A , B , C , d ....): ");
+                string row = Console.ReadLine();
+
+                Console.Write("Seat Number: ");
+                int number = int.Parse(Console.ReadLine());
+
+                Console.Write("Price: ");
+                double price = double.Parse(Console.ReadLine());
+
+                Seat s = new Seat(row, number);
+
+                Ticket ticket = new Ticket(movieName, type, s, price);
+
+                cinema01.AddTicket(ticket);
+            }
+            // B
+            Console.WriteLine("==================================== Display Tickets ================================");
+
+            cinema01.displayTickets();
+
+            // c
+            Console.WriteLine("==================================== Ask About Movie Name ================================");
+
+            Console.Write("Inter Movie Name to find it's Tickets ");
+            string movie_Name = Console.ReadLine();
+            Console.WriteLine(cinema01[movie_Name]);
+            // D
+            Console.WriteLine("==================================== GetTotalTicketsSold ================================");
+
+            Console.WriteLine(Ticket.GetTotalTicketsSold());
+            // E
+            Console.WriteLine("==================================== GenerateBookingReference ================================");
+
+            Console.WriteLine(BookingHelper.GenerateBookingReference());
+            Console.WriteLine(BookingHelper.GenerateBookingReference());
+            // F
+            Console.WriteLine("==================================== CalcGroupDiscount ================================");
+            Console.WriteLine(BookingHelper.CalcGroupDiscount(5, 100));
+
+           
+
 
             #endregion
+
+
+
+
+
+
+
+
         }
+
     }
-}
+}       
